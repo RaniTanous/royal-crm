@@ -1,0 +1,53 @@
+<br /><br />
+
+<textarea
+  [(ngModel)]="form.object"
+  name="object"
+  id=""
+  cols="50"
+  rows="10"
+></textarea>
+
+<br />
+
+<label for="id">ID</label>
+<input type="text" id="id" name="idValue" [(ngModel)]="form.idValue" />
+<br />
+
+<button (click)="add()">add</button>
+<button (click)="delete()">delete</button>
+<button (click)="set()">set</button>
+<button (click)="update()">update</button>
+
+<!--  will return the data only once -->
+<button (click)="get()">get</button>
+<button (click)="getAll()">get all</button>
+
+<!-- will return the data and update on any changes -->
+<button (click)="snapshot()">snapshot</button>
+<button (click)="snapshotAll()">snapshot All</button>
+
+<!-- will return the actual data as an array and update on changes -->
+<button (click)="valueChanges()">valueChanges</button>
+<button (click)="valueChangesAll()">valueChanges All</button>
+
+<br /><br />
+<details>
+  <summary>get results</summary>
+
+  <pre>{{ getResults | async | json }}</pre>
+</details>
+
+<br /><br />
+<details>
+  <summary>snapshot results</summary>
+
+  <pre>{{ snapshotResults | async | json }}</pre>
+</details>
+
+<br /><br />
+<details>
+  <summary>value changes results</summary>
+
+  <pre>{{ valueChangesResults | async | json }}</pre>
+</details>

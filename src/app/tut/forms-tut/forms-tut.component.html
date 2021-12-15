@@ -1,0 +1,45 @@
+<br /><br />
+
+<h1>Template-driven forms</h1>
+<p>import FormsModule from @angular/forms</p>
+<p>there is another approach to forms in angular called reactive forms</p>
+
+<br /><br />
+
+<input #inp="ngModel" [(ngModel)]="value" type="text" required minlength="5" />
+<button (click)="changeValue()">change value</button>
+<button (click)="log(inp)">log</button>
+<br />
+{{ value }}
+
+<br /><br /><br />
+<h3>
+  Pristine when the value was not changed and dirty when the value changed by
+  the user
+</h3>
+<ul>
+  <li>pristine: {{ inp.pristine }}</li>
+  <li>dirty: {{ inp.dirty }}</li>
+</ul>
+
+<h3>touched after the user got the input into focus and out</h3>
+<ul>
+  <li>touched: {{ inp.touched }}</li>
+  <li>untouched: {{ inp.untouched }}</li>
+</ul>
+
+<h3>whether the input is enabled or disabled</h3>
+<ul>
+  <li>disabled: {{ inp.disabled }}</li>
+  <li>enabled: {{ inp.enabled }}</li>
+</ul>
+
+<h3>
+  whether the input is valid or invalid using html5 validation attributes.
+  errors is null as long as valid else shows the invalidity state
+</h3>
+<ul>
+  <li>valid: {{ inp.valid }}</li>
+  <li>invalid: {{ inp.invalid }}</li>
+  <li>errors: {{ inp.errors | json }}</li>
+</ul>

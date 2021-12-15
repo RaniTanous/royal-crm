@@ -1,0 +1,16 @@
+<br /><br /><br />
+
+<input [(ngModel)]="form.email" type="text" />
+<input [(ngModel)]="form.password" type="text" /><br />
+<button (click)="login()">Login</button>
+<button (click)="createUser()">register</button>
+<button (click)="loginWithGoogleRedirect()">
+  Login with Google (redirect)
+</button>
+<button (click)="loginWithGooglePop()">Login with Google (popup)</button>
+<button (click)="logout()">logout</button>
+
+<pre>
+
+    {{ user$ | async | json }}
+</pre>

@@ -1,0 +1,35 @@
+<br /><br />
+
+<h1>HTTP in Angular</h1>
+<p>import HTTPClientModule from @angular/common/http</p>
+
+<div>
+  <textarea #jsonData cols="50" rows="10"></textarea>
+  <br />
+  id: <input #id type="text" />
+
+  <br />
+
+  <button (click)="get(id.value)">GET</button>
+  <button (click)="post(jsonData.value)">POST</button>
+  <button (click)="patch(id.value, jsonData.value)">PATCH</button>
+  <button (click)="delete(id.value)">DELETE</button>
+</div>
+
+<!-- <div>
+  <pre>{{ data | async | json }}</pre>
+</div> -->
+
+<!-- <div *ngIf="asTest | async">
+  {{ asTest | async }}
+</div> -->
+<div *ngIf="asTest | async as a">
+  {{ a }}
+</div>
+
+<div *ngIf="data | async as dataObj; else loading">
+  <pre>{{ dataObj | json }}</pre>
+</div>
+<ng-template #loading> loading... </ng-template>
+
+{{ counter }}

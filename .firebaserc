@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "royal-crm-w271220mr": {
+      "hosting": {
+        "royal-crm": [
+          "royal-crm-w271220mr"
+        ]
+      }
+    }
+  }
+}
